@@ -19,7 +19,8 @@ export class BitbucketReviewerRepository extends ReviewerRepository {
     super();
   }
 
-  get(id: string): Promise<ReviewerEntity> {
+  get(reviewerId: string): Promise<ReviewerEntity> {
+    // @@@TODO
     return this.http
       .get<BitbucketUserEntity>(
         this.endpoints.getUser.url({ userId: BitbucketUuidUtil.parseTo(id) })

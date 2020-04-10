@@ -32,11 +32,11 @@ export class RepositoryFacade {
   }
 
   getReviewerStatistics(
-    username: string,
+    reviewerId: string,
     token: string,
     platform: Platform
   ): Promise<ReviewerStatisticsReadModel> {
-    return this.queryBus.execute(new GetReviewerStatisticsQuery(username, token, platform));
+    return this.queryBus.execute(new GetReviewerStatisticsQuery(reviewerId, token, platform));
   }
 
   listRepositoriesStatistics(

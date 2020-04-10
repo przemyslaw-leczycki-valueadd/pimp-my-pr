@@ -18,7 +18,8 @@ export class GithubReviewerRepository extends ReviewerRepository {
     super();
   }
 
-  get(id: string, token: string): Promise<ReviewerEntity> {
+  get(reviewerId: string, token: string): Promise<ReviewerEntity> {
+    // @@@TODO
     return this.http
       .get<GithubUserEntity>(this.endpoints.getUser.url({ username: id }), {
         headers: { Authorization: `token ${token}` }
