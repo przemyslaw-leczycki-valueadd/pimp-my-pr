@@ -4,8 +4,13 @@ import { ServerUserPublicModule } from '@pimp-my-pr/server/user/public';
 import { AuthFacade } from './auth.facade';
 import { GetBitbucketAccessTokenHandler } from './queries/get-bitbucket-access-token/get-bitbucket-access-token.handler';
 import { GetGithubAccessTokenHandler } from './queries/get-github-access-token/get-github-access-token.handler';
+import { GetGitlabAccessTokenHandler } from './queries/get-gitlab-access-token/get-gitlab-access-token.handler';
 
-const QueryHandlers = [GetBitbucketAccessTokenHandler, GetGithubAccessTokenHandler];
+const QueryHandlers = [
+  GetBitbucketAccessTokenHandler,
+  GetGithubAccessTokenHandler,
+  GetGitlabAccessTokenHandler
+];
 
 @Module({
   imports: [CqrsModule, ServerUserPublicModule],

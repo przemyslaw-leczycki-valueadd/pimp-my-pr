@@ -17,6 +17,8 @@ function initPmpWebEnvironment() {
   );
   replaceInFile('{{githubClientId}}', PMP_SERVER_GITHUB_CLIENT_ID, devEnvironmentFile);
   replaceInFile('{{githubClientId}}', PMP_SERVER_GITHUB_CLIENT_ID, prodEnvironmentFile);
+  replaceInFile('{{githubClientId}}', PMP_SERVER_GITHUB_CLIENT_ID, devEnvironmentFile);
+  replaceInFile('{{githubClientId}}', PMP_SERVER_GITHUB_CLIENT_ID, prodEnvironmentFile);
 }
 function replaceInFile(from, to, file) {
   var fileContent = fs.readFileSync(file, 'utf8');

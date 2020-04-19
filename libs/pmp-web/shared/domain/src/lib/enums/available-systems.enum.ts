@@ -1,4 +1,5 @@
 export enum AvailableSystems {
   bitbucket = 'bitbucket',
-  github = 'github'
+  github = 'github',
+  gitlab = 'gitlab'
 }

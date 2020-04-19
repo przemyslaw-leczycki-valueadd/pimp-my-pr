@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ENVIRONMENT_ADAPTER } from '@pimp-my-pr/pmp-web/shared/domain';
-import { environment } from './environment';
+import { environment } from './environment.sample';
 
 @NgModule({
   providers: [

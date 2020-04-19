@@ -20,6 +20,10 @@ export class AuthController {
         return this.authFacade.getGithubAccessToken(body.code);
       }
 
+      case Platform.gitlab: {
+        return this.authFacade.getGitlabAccessToken(body.code);
+      }
+
       default: {
         throw new NotImplementedException(
           `authorization for ${body.platform} is not implemented yet`
