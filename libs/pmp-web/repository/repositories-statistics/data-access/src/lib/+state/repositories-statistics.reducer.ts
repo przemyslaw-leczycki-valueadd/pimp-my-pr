@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { RepositoryStatistics } from '@pimp-my-pr/shared/domain';
 import { fromRepositoriesStatisticsActions } from './repositories-statistics.actions';
-import { extendRepositoryStatisticsWithApiErrors } from '../../../../../../shared/util/src/lib/helper-functions';
+import { extendRepositoryStatisticsWithApiErrors } from '@pimp-my-pr/pmp-web/shared/util';
 
 export const REPOSITORIES_STATISTICS_FEATURE_KEY = 'repositoriesStatistics';
 
