@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { RepositoryStatistics } from '@pimp-my-pr/shared/domain';
 import { fromRepositoriesStatisticsActions } from './repositories-statistics.actions';
+import { extendRepositoryStatisticsWithApiErrors } from '../../../../../../shared/util/src/lib/helper-functions';
 
 export const REPOSITORIES_STATISTICS_FEATURE_KEY = 'repositoriesStatistics';
 
@@ -55,7 +56,7 @@ export function repositoriesStatisticsReducer(
       state = {
         ...state,
         repositoriesStatisticsCollection: adapter.addAll(
-          action.payload,
+          <RepositoryStatistics[]>extendRepositoryStatisticsWithApiErrors(action.payload),
           state.repositoriesStatisticsCollection
         ),
         repositoriesStatisticsCollectionLoading: false,

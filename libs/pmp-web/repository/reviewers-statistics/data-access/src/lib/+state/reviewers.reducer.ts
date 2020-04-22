@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { UserStatistics } from '@pimp-my-pr/shared/domain';
 import { fromUserActions } from './reviewers.actions';
+import { extendRepositoryStatisticsWithApiErrors } from '@pimp-my-pr/pmp-web/shared/util';
 
 export const REVIEWERS_FEATURE_KEY = 'reviewers';
 
@@ -53,7 +54,7 @@ export function reviewersReducer(
       state = {
         ...state,
         reviewersStatisticsCollection: adapter.addAll(
-          action.payload,
+          <UserStatistics[]>extendRepositoryStatisticsWithApiErrors(action.payload),
           state.reviewersStatisticsCollection
         ),
         reviewersStatisticsCollectionLoading: false,

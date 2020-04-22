@@ -7,6 +7,6 @@ export interface RepositoryStatistics {
   longestPrLinesOfCode?: number;
   pendingPrs?: number;
   pictureUrl: string;
-  sumOfHoursPrsWaiting?: number;
+  sumOfHoursPrsWaiting?: number | { value: number; errors: boolean };
   prsStatistics?: PrStatistics[];
 }

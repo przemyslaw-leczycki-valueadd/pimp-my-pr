@@ -1,3 +1,5 @@
+$red: #fc3b56;
+
 mat-header-cell > span {
   font-size: 14px;
   font-weight: normal;
@@ -10,6 +12,16 @@ mat-header-cell > span > mat-icon {
 
 mat-cell {
   padding: 0 5px;
+}
+
+mat-row.mat-row--error {
+  border-left: 3px solid $red;
+  width: calc(100% - 3px);
+}
+
+mat-icon.mat-icon--notification {
+  margin-right: 15px;
+  color: $red;
 }
 
 .avatar-column {
